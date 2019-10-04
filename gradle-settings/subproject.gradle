@@ -1,0 +1,13 @@
+subprojects {
+    version = '1.0'
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+            dep.each { k, v -> v.each { d -> force group: d.group, name: d.name, version: d.version } }
+        }
+    }
+}

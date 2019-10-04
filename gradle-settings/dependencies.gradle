@@ -1,0 +1,37 @@
+ext.libVersions = [
+        jackson   : '2.9.9',
+        jersey    : '2.29',
+        jetty     : '9.4.20.v20190813',
+        jcommander: '1.78',
+]
+
+ext.dep = [
+        jackson     : [
+                [group: "com.fasterxml.jackson.jaxrs", name: "jackson-jaxrs-json-provider", version: libVersions.jackson],
+                [group: "com.fasterxml.jackson.core", name: "jackson-core", version: libVersions.jackson],
+                [group: "com.fasterxml.jackson.core", name: "jackson-annotations", version: libVersions.jackson],
+        ],
+        jcommander  : [
+                [group: "com.beust", name: "jcommander", version: libVersions.jcommander]
+        ],
+        jersey      : [
+                [group: "org.glassfish.jersey.core", name: "jersey-common", version: libVersions.jersey]
+        ],
+        jerseyServer: [
+                [group: "org.glassfish.jersey.media", name: "jersey-media-multipart", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.media", name: "jersey-media-json-jackson", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.core", name: "jersey-server", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.ext", name: "jersey-bean-validation", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.containers", name: "jersey-container-jetty-http", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.containers", name: "jersey-container-servlet-core", version: libVersions.jersey],
+                [group: "org.glassfish.jersey.inject", name: "jersey-hk2", version: libVersions.jersey]
+        ],
+        jetty       : [
+                [group: "org.eclipse.jetty", name: "jetty-alpn-java-server", version: libVersions.jetty],
+                [group: "org.eclipse.jetty", name: "jetty-servlet", version: libVersions.jetty],
+                [group: "org.eclipse.jetty", name: "jetty-rewrite", version: libVersions.jetty],
+                [group: "org.eclipse.jetty", name: "jetty-server", version: libVersions.jetty],
+                [group: "org.eclipse.jetty", name: "jetty-util", version: libVersions.jetty],
+                [group: "org.eclipse.jetty.http2", name: "http2-server", version: libVersions.jetty]
+        ],
+]
